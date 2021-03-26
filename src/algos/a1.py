@@ -15,7 +15,7 @@ class A1(Algo):
         while self._running:
             p = Price.latest(ProductCode.BTC_JPY)[0]
             MAX_SIZE = 0.01
-            size = random.random()*MAX_SIZE
+            size = 2*(random.random()-0.5)*MAX_SIZE
             if size > 0 and self._cash >= size*p['ltp']:
                 self._btc += size
                 self._cash -= size*p['ltp'] - self._transaction_cost
